@@ -1,0 +1,22 @@
+{
+	"name": "=T0k3n!z3R=",
+	"short_name": "tokenizer",
+	"id": "https://1984.ninja/tokenizer/",
+	"url": "https://1984.ninja/tokenizer/",
+	"scope": "https://1984.ninja/tokenizer/",
+	"start_url": "https://1984.ninja/tokenizer/",
+	"description": "A quick and dirty password key derivation tool.",
+	"display": "standalone",
+	"icons": [{
+			"src": "./favicon.png",
+			"sizes": "128x128",
+			"type": "image/png"
+	},{
+			"src": "./logo.svg",
+			"sizes": "512x512",
+			"type": "image/svg+xml"	
+	}],
+	"manifest_version": 2,
+	"offline_enabled": true,
+	"permissions": ["webview"]
+}
