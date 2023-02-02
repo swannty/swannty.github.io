@@ -1,7 +1,7 @@
 
 'use strict'
 
-onmessage = function(e)
+self.onmessage = function(e)
 {
 	var task, user, login, server, password;
 	[task, user, login, server, password] = e.data;
@@ -10,7 +10,7 @@ onmessage = function(e)
 	{
 		digest(user, login, server, password)
 		.then(hash => tokenizer(buff2hex(hash.auth), buff2hex(hash.host), buff2hex(hash.key)))
-		.then(results => postMessage(['tokenized', results]));
+		.then(results => self.postMessage(['tokenized', results]));
 	}
 }
 
