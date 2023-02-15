@@ -16,6 +16,8 @@
 		body, h1, h2, h3, h4, h5, h6 { font-family: Helvetica, Verdana, Arial, sans-serif; }
 	</style>
 
+	<script src="./qrcode.js" data-git="https://github.com/davidshimjs/qrcodejs/blob/master/qrcode.js" integrity="sha256-Puct6facZo+VZzY6k1jflVlguukADZ69ZkFGcPiOhzU=" crossorigin="anonymous"></script>
+
 	<script>
 
 		"use strict";
@@ -28,6 +30,8 @@
 			{
 				document.getElementById("token").textContent = '!' + e.data[1].token;			
 				document.getElementById("pin-token").textContent = e.data[1].pin;
+
+				if (QRCode) new QRCode(document.getElementById("qr-code"), {text: '!' + e.data[1].token, width: 128, height: 128});
 			}
 		})
 
@@ -80,6 +84,7 @@
 			<ul class="w3-ul w3-border w3-section">
 				<li>&#x1f511; <label title="click to copy" id="token" class="w3-monospace w3-margin-left" onclick="navigator.clipboard.writeText(this.textContent)"></label></li>
 				<li>&#x1f511; <label title="click to copy" id="pin-token" class="w3-monospace w3-margin-left" onclick="navigator.clipboard.writeText(this.textContent)"></label></li>
+				<li>&#128247; <div id="qr-code"></div></li>
 			</ul>
 			
 		</form>
