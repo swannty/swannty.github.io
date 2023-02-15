@@ -38,6 +38,9 @@
 
 		function getToken()
 		{
+			const qr_img = document.getElementById('qr-code');
+			while (qr_img.hasChildNodes()) qr_img.lastChild.remove();
+
 			document.getElementById("token").textContent = '';
 			document.getElementById("pin-token").textContent = '';
 
